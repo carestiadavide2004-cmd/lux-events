@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LUX — Serate esclusive sul lungomare di Pescara</title>
+  <meta name="description" content="Lux organizza eventi esclusivi e serate di lusso sul lungomare di Pescara. Accesso su invito, location iconiche, esperienze su misura.">
+  <meta name="theme-color" content="#1a1612">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%231a1612'/%3E%3Ctext x='32' y='46' font-family='Georgia,serif' font-size='40' text-anchor='middle' fill='%23c9a45c'%3EL%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://images.pexels.com">
+  <link rel="preconnect" href="https://videos.pexels.com">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <div class="preloader__logo">
+        <span>L</span><span>U</span><span>X</span>
+      </div>
+      <div class="preloader__bar"><span id="preloaderBar"></span></div>
+      <p class="preloader__tag">Pescara · Lungomare</p>
+    </div>
+    <div class="preloader__curtain"></div>
+  </div>
+
+  <!-- ============ CURSORE ============ -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__ring"><span class="cursor__label"></span></div>
+    <div class="cursor__dot"></div>
+  </div>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <a href="#home" class="header__logo" data-goto="0" aria-label="Lux — torna all'inizio">
+      <span class="logo-mark">LUX</span>
+    </a>
+
+    <nav class="header__nav" aria-label="Navigazione principale">
+      <a href="#chi-siamo" data-goto="1">Chi siamo</a>
+      <a href="#esperienza" data-goto="2">Esperienza</a>
+      <a href="#eventi" data-goto="4">Eventi</a>
+      <a href="#prossimo-evento" data-goto="5">Prossimo evento</a>
+      <a href="#location" data-goto="6">Location</a>
+      <a href="#contatti" data-goto="8">Contatti</a>
+    </nav>
+
+    <a href="#lista" class="btn btn--outline btn--sm header__cta" data-goto="7" data-magnetic>
+      <span>Richiedi invito</span>
+    </a>
+
+    <button class="burger" id="burger" aria-label="Apri menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============ MENU MOBILE ============ -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav class="mobile-menu__nav" aria-label="Menu mobile">
+      <a href="#home" data-goto="0"><em>00</em>Home</a>
+      <a href="#chi-siamo" data-goto="1"><em>01</em>Chi siamo</a>
+      <a href="#esperienza" data-goto="2"><em>02</em>Esperienza Lux</a>
+      <a href="#eventi" data-goto="4"><em>03</em>Eventi passati</a>
+      <a href="#prossimo-evento" data-goto="5"><em>04</em>Prossimo evento</a>
+      <a href="#location" data-goto="6"><em>05</em>Location</a>
+      <a href="#lista" data-goto="7"><em>06</em>Lista esclusiva</a>
+      <a href="#contatti" data-goto="8"><em>07</em>Contatti</a>
+    </nav>
+    <div class="mobile-menu__foot">
+      <p>Lungomare Matteotti · Pescara</p>
+      <a href="mailto:prive@lux-events.it">prive@lux-events.it</a>
+    </div>
+  </div>
+
+  <!-- ============ NAV LATERALE (dots) ============ -->
+  <aside class="side-nav" id="sideNav" aria-label="Sezioni">
+    <div class="side-nav__count"><span id="sideCurrent">01</span><i></i><span id="sideTotal">09</span></div>
+    <ul id="sideDots"></ul>
+  </aside>
+
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <!-- ============ CONTENUTO ============ -->
+  <main class="fp" id="fp">
+    <div class="fp__track" id="fpTrack">
+
+      <!-- 1. HERO -->
+      <section class="section hero" id="home" data-name="Home">
+        <div class="hero__media">
+          <video class="hero__video" data-parallax-hero="bg" autoplay muted loop playsinline preload="auto"
+                 poster="https://images.pexels.com/photos/2263436/pexels-photo-2263436.jpeg?auto=compress&cs=tinysrgb&w=1600">
+            <source src="https://videos.pexels.com/video-files/7269151/7269151-hd_1920_1080_25fps.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="hero__veil"></div>
+        <div class="hero__lights" aria-hidden="true">
+          <div class="hero__lights-inner" data-parallax-hero="lights"><span></span><span></span><span></span></div>
+        </div>
+
+        <div class="hero__content" data-parallax-hero="content">
+          <p class="eyebrow" data-reveal data-delay="0">Pescara · Serate esclusive sul lungomare</p>
+          <h1 class="hero__title" aria-label="LUX">
+            <span class="hero__letter" data-depth="0.6">L</span>
+            <span class="hero__letter" data-depth="1">U</span>
+            <span class="hero__letter" data-depth="0.8">X</span>
+          </h1>
+          <p class="hero__claim" data-reveal data-delay="3">Dove la notte diventa <em>privilegio</em>.</p>
+          <div class="hero__actions" data-reveal data-delay="4">
+            <a href="#lista" class="btn btn--gold" data-goto="7" data-magnetic><span>Entra nella lista</span></a>
+            <a href="#eventi" class="btn btn--ghost" data-goto="4" data-magnetic><span>Scopri le serate</span></a>
+          </div>
+        </div>
+
+        <div class="hero__meta" data-reveal data-delay="5">
+          <span>42°27′N · 14°13′E</span>
+          <span>Est. MMXVIII</span>
+        </div>
+
+        <button class="scroll-hint" data-goto="1" aria-label="Vai alla sezione successiva">
+          <span>Scorri</span><i></i>
+        </button>
+      </section>
+
+      <!-- 2. CHI SIAMO -->
+      <section class="section about" id="chi-siamo" data-name="Chi siamo">
+        <div class="container about__grid">
+          <div class="about__text">
+            <p class="eyebrow" data-reveal>01 — Chi siamo</p>
+            <h2 class="title" data-split>L'arte di rendere <em>unica</em> ogni notte.</h2>
+            <p class="lead" data-reveal>Lux nasce sul lungomare di Pescara con un'idea precisa: trasformare una serata in un ricordo che resta. Curiamo eventi privati e serate esclusive dove ogni dettaglio — luce, musica, ospiti, silenzio — è scelto con intenzione.</p>
+
+            <div class="about__pillars">
+              <article class="about__pillar" data-reveal>
+                <span class="about__num">I</span>
+                <h3>La missione</h3>
+                <p>Creare esperienze notturne su misura, accessibili solo a chi ne condivide lo spirito. Pochi ospiti, scelti. Un'accoglienza impeccabile. Nessun compromesso.</p>
+              </article>
+              <article class="about__pillar" data-reveal>
+                <span class="about__num">II</span>
+                <h3>La visione</h3>
+                <p>Portare l'Adriatico nel circuito delle grandi notti europee, con un linguaggio fatto di eleganza discreta, riservatezza e bellezza senza tempo.</p>
+              </article>
+            </div>
+          </div>
+
+          <div class="about__visual">
+            <figure class="about__img about__img--main" data-reveal="clip">
+              <img src="https://images.pexels.com/photos/3419728/pexels-photo-3419728.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Ospite in abito da sera in un salotto elegante" loading="lazy" data-parallax="0.06">
+            </figure>
+            <figure class="about__img about__img--small" data-reveal="clip" data-delay="2">
+              <img src="https://images.pexels.com/photos/3171837/pexels-photo-3171837.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Brindisi con calici di champagne e coriandoli dorati" loading="lazy" data-parallax="-0.08">
+            </figure>
+            <div class="about__badge" data-reveal="scale" data-delay="3">
+              <svg viewBox="0 0 200 200" aria-hidden="true">
+                <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+                <text><textPath href="#circlePath">SOLO SU INVITO · SOLO SU INVITO · SOLO SU INVITO ·</textPath></text>
+              </svg>
+              <span>L</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. ESPERIENZA LUX -->
+      <section class="section experience" id="esperienza" data-name="Esperienza">
+        <div class="section__clip" aria-hidden="true"><div class="experience__watermark" data-parallax="0.12">LUX</div></div>
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>02 — L'esperienza Lux</p>
+            <h2 class="title" data-split>L'esclusività non si mostra. <em>Si vive.</em></h2>
+            <p class="lead lead--center" data-reveal>Ogni serata Lux è un mondo chiuso, costruito attorno a pochi ospiti. Ecco cosa la rende irripetibile.</p>
+          </div>
+
+          <div class="cards">
+            <article class="card" data-reveal data-glow>
+              <div class="card__icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="20" width="28" height="20" rx="1"/><path d="M16 20v-6a8 8 0 0 1 16 0v6"/><circle cx="24" cy="30" r="2.5"/></svg>
+              </div>
+              <span class="card__num">01</span>
+              <h3>Accesso riservato</h3>
+              <p>Si entra solo su invito personale. Liste curate, numeri limitati, riservatezza assoluta per ogni ospite.</p>
+            </article>
+            <article class="card" data-reveal data-glow>
+              <div class="card__icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 34c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/><path d="M4 41c4 0 4-3 8-3s4 3 8 3 4-3 8-3 4 3 8 3 4-3 8-3"/><circle cx="24" cy="16" r="7"/></svg>
+              </div>
+              <span class="card__num">02</span>
+              <h3>Il lungomare come scenario</h3>
+              <p>Terrazze sul mare, beach club privatizzati, ville affacciate sull'Adriatico: location che diventano parte dello spettacolo.</p>
+            </article>
+            <article class="card" data-reveal data-glow>
+              <div class="card__icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 6h14l-2 16a5 5 0 0 1-10 0z"/><path d="M24 27v14M17 42h14"/><path d="M18.5 14h11"/></svg>
+              </div>
+              <span class="card__num">03</span>
+              <h3>Dettaglio sartoriale</h3>
+              <p>Mixology d'autore, champagne selezionati, allestimenti disegnati su misura. Nulla è standard, tutto è pensato.</p>
+            </article>
+            <article class="card" data-reveal data-glow>
+              <div class="card__icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l4.8 13.2L42 18l-10.6 8.4L35 40l-11-7.8L13 40l3.6-13.6L6 18l13.2-.8z"/></svg>
+              </div>
+              <span class="card__num">04</span>
+              <h3>Notti irripetibili</h3>
+              <p>DJ set internazionali, performance live, momenti a sorpresa. Ogni evento accade una volta sola.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. STATISTICHE -->
+      <section class="section stats" id="numeri" data-name="Numeri">
+        <div class="section__bg" data-bg-parallax>
+          <img src="https://images.pexels.com/photos/941864/pexels-photo-941864.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" loading="lazy">
+        </div>
+        <div class="section__veil"></div>
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow" data-reveal>03 — Lux in numeri</p>
+            <h2 class="title" data-split>Notti che <em>parlano</em> da sole.</h2>
+          </div>
+
+          <div class="stats__grid">
+            <div class="stat" data-reveal>
+              <div class="stat__value"><span data-count="186">0</span><sup>+</sup></div>
+              <div class="stat__line"></div>
+              <p class="stat__label">Eventi organizzati</p>
+            </div>
+            <div class="stat" data-reveal>
+              <div class="stat__value"><span data-count="24500">0</span><sup>+</sup></div>
+              <div class="stat__line"></div>
+              <p class="stat__label">Ospiti coinvolti</p>
+            </div>
+            <div class="stat" data-reveal>
+              <div class="stat__value"><span data-count="14">0</span></div>
+              <div class="stat__line"></div>
+              <p class="stat__label">Location esclusive</p>
+            </div>
+            <div class="stat" data-reveal>
+              <div class="stat__value"><span data-count="3200">0</span><sup>+</sup></div>
+              <div class="stat__line"></div>
+              <p class="stat__label">Bottiglie stappate</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. EVENTI PASSATI -->
+      <section class="section gallery" id="eventi" data-name="Eventi">
+        <div class="container container--wide">
+          <div class="section-head section-head--row">
+            <div>
+              <p class="eyebrow" data-reveal>04 — Eventi passati</p>
+              <h2 class="title" data-split>Frammenti di <em>notti</em> Lux.</h2>
+            </div>
+            <p class="lead" data-reveal>Uno sguardo alle serate che hanno acceso il lungomare. Ciò che accade dentro, però, resta tra gli ospiti.</p>
+          </div>
+
+          <div class="gallery__grid" id="galleryGrid">
+            <figure class="g-item g-item--tall" data-reveal="clip" data-type="image" data-src="https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=1920" data-caption="Masquerade Noir — Villa Marea">
+              <img src="https://images.pexels.com/photos/787961/pexels-photo-787961.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ospiti con maschere veneziane durante una festa in maschera" loading="lazy">
+              <figcaption><span>Masquerade Noir</span><em>Villa Marea · Febbraio</em></figcaption>
+            </figure>
+            <figure class="g-item g-item--tall" data-reveal="clip" data-type="video" data-src="https://videos.pexels.com/video-files/6314336/6314336-hd_1080_1920_25fps.mp4" data-caption="Champagne Hour — Terrazza Nettuno">
+              <video muted loop playsinline preload="metadata" src="https://videos.pexels.com/video-files/6314336/6314336-hd_720_1280_25fps.mp4#t=0.5"></video>
+              <span class="g-item__play" aria-hidden="true"></span>
+              <figcaption><span>Champagne Hour</span><em>Terrazza Nettuno · Luglio</em></figcaption>
+            </figure>
+            <figure class="g-item" data-reveal="clip" data-type="image" data-src="https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=1920" data-caption="Black &amp; Gold Night — Molo Lounge">
+              <img src="https://images.pexels.com/photos/274192/pexels-photo-274192.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Bancone di un cocktail bar affollato in bianco e nero" loading="lazy">
+              <figcaption><span>Black &amp; Gold Night</span><em>Molo Lounge · Marzo</em></figcaption>
+            </figure>
+            <figure class="g-item g-item--wide" data-reveal="clip" data-type="video" data-src="https://videos.pexels.com/video-files/9003386/9003386-hd_1920_1080_25fps.mp4" data-caption="Summer Closing — Aurum Beach Club">
+              <video muted loop playsinline preload="metadata" src="https://videos.pexels.com/video-files/9003386/9003386-hd_1280_720_25fps.mp4#t=0.5"></video>
+              <span class="g-item__play" aria-hidden="true"></span>
+              <figcaption><span>Summer Closing</span><em>Aurum Beach Club · Settembre</em></figcaption>
+            </figure>
+            <figure class="g-item" data-reveal="clip" data-type="image" data-src="https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=1920" data-caption="Private Birthday — Villa Marea">
+              <img src="https://images.pexels.com/photos/1729797/pexels-photo-1729797.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Torta con candele scintillanti durante una festa privata" loading="lazy">
+              <figcaption><span>Private Birthday</span><em>Villa Marea · Maggio</em></figcaption>
+            </figure>
+            <figure class="g-item" data-reveal="clip" data-type="image" data-src="https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=1920" data-caption="Dîner Privé — Sale &amp; Oro">
+              <img src="https://images.pexels.com/photos/696218/pexels-photo-696218.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Ospiti che brindano con calici di vino a una cena privata" loading="lazy">
+              <figcaption><span>Dîner Privé</span><em>Sale &amp; Oro · Aprile</em></figcaption>
+            </figure>
+            <figure class="g-item" data-reveal="clip" data-type="video" data-src="https://videos.pexels.com/video-files/12893474/12893474-hd_1920_1080_24fps.mp4" data-caption="After Hours — Onda Privé">
+              <video muted loop playsinline preload="metadata" src="https://videos.pexels.com/video-files/12893474/12893474-hd_1280_720_24fps.mp4#t=0.5"></video>
+              <span class="g-item__play" aria-hidden="true"></span>
+              <figcaption><span>After Hours</span><em>Onda Privé · Agosto</em></figcaption>
+            </figure>
+            <figure class="g-item g-item--wide" data-reveal="clip" data-type="image" data-src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=1920" data-caption="Ferragosto d'Oro — Riva Blu">
+              <img src="https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Folla festante sotto fontane di scintille dorate" loading="lazy">
+              <figcaption><span>Ferragosto d'Oro</span><em>Riva Blu · Agosto</em></figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. PROSSIMO EVENTO -->
+      <section class="section next-event" id="prossimo-evento" data-name="Prossimo evento">
+        <div class="section__bg" data-bg-parallax>
+          <img src="https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" loading="lazy">
+        </div>
+        <div class="section__veil section__veil--strong"></div>
+
+        <div class="container next-event__inner">
+          <p class="eyebrow" data-reveal>05 — Prossimo evento</p>
+          <p class="next-event__kicker" data-reveal>Posti limitati · Solo su invito</p>
+          <h2 class="title title--xl" data-split>Nuit <em>d'Or</em></h2>
+          <p class="next-event__sub" data-reveal>Gala sul mare · <span id="eventDateLabel">Sabato 14 Novembre 2026 · ore 22:30</span></p>
+
+          <div class="countdown" id="countdown" data-target="2026-11-14T22:30:00+01:00" data-reveal>
+            <div class="countdown__unit">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="54"/><circle class="ring" cx="60" cy="60" r="54" data-ring="days"/></svg>
+              <div class="countdown__num" data-unit="days">00</div>
+              <span class="countdown__label">Giorni</span>
+            </div>
+            <div class="countdown__unit">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="54"/><circle class="ring" cx="60" cy="60" r="54" data-ring="hours"/></svg>
+              <div class="countdown__num" data-unit="hours">00</div>
+              <span class="countdown__label">Ore</span>
+            </div>
+            <div class="countdown__unit">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="54"/><circle class="ring" cx="60" cy="60" r="54" data-ring="minutes"/></svg>
+              <div class="countdown__num" data-unit="minutes">00</div>
+              <span class="countdown__label">Minuti</span>
+            </div>
+            <div class="countdown__unit">
+              <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="ring-bg" cx="60" cy="60" r="54"/><circle class="ring" cx="60" cy="60" r="54" data-ring="seconds"/></svg>
+              <div class="countdown__num" data-unit="seconds">00</div>
+              <span class="countdown__label">Secondi</span>
+            </div>
+          </div>
+
+          <ul class="next-event__info" data-reveal>
+            <li><span>Location</span>Terrazza Nettuno · Lungomare Matteotti</li>
+            <li><span>Dress code</span>Black tie · Dettagli oro</li>
+            <li><span>Disponibilità</span><p><b id="seatsLeft">38</b> inviti su 120</p></li>
+          </ul>
+
+          <a href="#lista" class="btn btn--gold" data-goto="7" data-magnetic data-reveal><span>Richiedi il tuo invito</span></a>
+        </div>
+      </section>
+
+      <!-- 7. LOCATION & PARTNER -->
+      <section class="section locations" id="location" data-name="Location">
+        <div class="container container--wide">
+          <div class="section-head section-head--row">
+            <div>
+              <p class="eyebrow" data-reveal>06 — Location &amp; Partner</p>
+              <h2 class="title" data-split>Il lungomare è il nostro <em>palcoscenico</em>.</h2>
+            </div>
+            <p class="lead" data-reveal>Una rete selezionata di indirizzi affacciati sull'Adriatico, aperti in esclusiva per le serate Lux.</p>
+          </div>
+
+          <div class="locations__layout">
+            <div class="coast" data-reveal>
+              <svg class="coast__svg" viewBox="0 0 400 520" aria-label="Mappa stilizzata del lungomare di Pescara">
+                <defs>
+                  <linearGradient id="seaGrad" x1="240" x2="400" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0" stop-color="#c9a45c" stop-opacity=".1"/>
+                    <stop offset="1" stop-color="#c9a45c" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="coast__sea" d="M250 0 C 230 90, 270 160, 240 250 S 220 420, 260 520 L400 520 L400 0 Z" fill="url(#seaGrad)"/>
+                <path class="coast__line" d="M250 0 C 230 90, 270 160, 240 250 S 220 420, 260 520"/>
+                <path class="coast__river" d="M0 262 C 80 250, 160 270, 244 252"/>
+                <text x="300" y="120" class="coast__label">Mare Adriatico</text>
+                <text x="40" y="250" class="coast__label coast__label--small">Fiume Pescara</text>
+                <g class="coast__pins">
+                  <g class="pin" data-loc="0" transform="translate(242 60)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                  <g class="pin" data-loc="1" transform="translate(252 140)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                  <g class="pin" data-loc="2" transform="translate(245 215)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                  <g class="pin" data-loc="3" transform="translate(234 310)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                  <g class="pin" data-loc="4" transform="translate(236 395)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                  <g class="pin" data-loc="5" transform="translate(252 470)"><circle r="14" class="pin__pulse"/><circle r="5"/></g>
+                </g>
+              </svg>
+              <span class="coast__compass">N ↑</span>
+            </div>
+
+            <div class="loc-list" id="locList">
+              <article class="loc" data-loc="0" data-reveal data-glow>
+                <span class="loc__idx">01</span>
+                <div><h3>Aurum Beach Club</h3><p>Lungomare Matteotti Nord · Beach club privatizzato</p></div>
+                <span class="loc__cap">400 ospiti</span>
+              </article>
+              <article class="loc" data-loc="1" data-reveal data-glow>
+                <span class="loc__idx">02</span>
+                <div><h3>Terrazza Nettuno</h3><p>Lungomare Matteotti · Rooftop vista mare</p></div>
+                <span class="loc__cap">120 ospiti</span>
+              </article>
+              <article class="loc" data-loc="2" data-reveal data-glow>
+                <span class="loc__idx">03</span>
+                <div><h3>Molo Lounge</h3><p>Area del Ponte del Mare · Cocktail lounge</p></div>
+                <span class="loc__cap">180 ospiti</span>
+              </article>
+              <article class="loc" data-loc="3" data-reveal data-glow>
+                <span class="loc__idx">04</span>
+                <div><h3>Onda Privé</h3><p>Porto Turistico · Club privato sull'acqua</p></div>
+                <span class="loc__cap">250 ospiti</span>
+              </article>
+              <article class="loc" data-loc="4" data-reveal data-glow>
+                <span class="loc__idx">05</span>
+                <div><h3>Villa Marea</h3><p>Riviera Sud · Villa storica con giardino</p></div>
+                <span class="loc__cap">90 ospiti</span>
+              </article>
+              <article class="loc" data-loc="5" data-reveal data-glow>
+                <span class="loc__idx">06</span>
+                <div><h3>Riva Blu</h3><p>Lungomare Sud · Spiaggia privata al tramonto</p></div>
+                <span class="loc__cap">600 ospiti</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="partners" data-reveal>
+            <p class="partners__title">Partner d'eccellenza</p>
+            <div class="marquee">
+              <div class="marquee__track">
+                <span class="partner">Maison Delaunay<small>Champagne</small></span>
+                <span class="partner">Atelier Verano<small>Couture</small></span>
+                <span class="partner">Noir Distillery<small>Spirits</small></span>
+                <span class="partner">Sale &amp; Oro<small>Fine dining</small></span>
+                <span class="partner">Adriatica Yachts<small>Charter</small></span>
+                <span class="partner">Lumen Sound<small>Audio &amp; Light</small></span>
+                <span class="partner">Fiori di Riva<small>Flower design</small></span>
+                <span class="partner">Velluto Cars<small>Chauffeur</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. LISTA ESCLUSIVA -->
+      <section class="section invite" id="lista" data-name="Lista esclusiva">
+        <div class="section__bg" data-bg-parallax>
+          <img src="https://images.pexels.com/photos/1283219/pexels-photo-1283219.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="" loading="lazy">
+        </div>
+        <div class="section__veil section__veil--strong"></div>
+
+        <div class="container invite__inner">
+          <div class="invite__card" data-reveal="scale" data-glow>
+            <span class="invite__corner invite__corner--tl"></span>
+            <span class="invite__corner invite__corner--tr"></span>
+            <span class="invite__corner invite__corner--bl"></span>
+            <span class="invite__corner invite__corner--br"></span>
+
+            <div class="invite__form-wrap" id="inviteWrap">
+              <p class="eyebrow eyebrow--center">07 — Lista esclusiva</p>
+              <h2 class="title title--center" data-split>Richiedi il tuo <em>invito</em>.</h2>
+              <p class="invite__text">Iscriviti alla lista riservata: riceverai in anteprima gli inviti personali alle prossime serate Lux. Ogni richiesta viene valutata singolarmente.</p>
+
+              <form class="form" id="inviteForm" novalidate>
+                <div class="form__row">
+                  <div class="field">
+                    <input type="text" id="invName" name="name" placeholder=" " autocomplete="name" required>
+                    <label for="invName">Nome e cognome</label>
+                    <span class="field__line"></span>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                  <div class="field">
+                    <input type="email" id="invEmail" name="email" placeholder=" " autocomplete="email" required>
+                    <label for="invEmail">Email</label>
+                    <span class="field__line"></span>
+                    <span class="field__error" aria-live="polite"></span>
+                  </div>
+                </div>
+                <label class="check">
+                  <input type="checkbox" name="privacy" required>
+                  <span class="check__box"></span>
+                  <span>Acconsento al trattamento dei dati per ricevere inviti riservati.</span>
+                </label>
+                <span class="field__error field__error--check" aria-live="polite"></span>
+                <button type="submit" class="btn btn--gold btn--block" data-magnetic><span>Entra nella lista</span></button>
+              </form>
+            </div>
+
+            <div class="success" id="inviteSuccess" aria-live="polite" hidden>
+              <svg class="success__icon" viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="36"/><path d="M25 41l10 10 20-22"/></svg>
+              <h3>Benvenuto nella lista, <em id="inviteName"></em>.</h3>
+              <p>La tua richiesta è stata registrata. Se selezionato, riceverai il tuo invito personale via email prima di chiunque altro.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. CONTATTI + FOOTER -->
+      <section class="section contact" id="contatti" data-name="Contatti">
+        <div class="container contact__grid">
+          <div class="contact__info">
+            <p class="eyebrow" data-reveal>08 — Contatti</p>
+            <h2 class="title" data-split>Parliamo della tua <em>prossima notte</em>.</h2>
+            <p class="lead" data-reveal>Eventi privati, lanci di brand, anniversari, serate aziendali. Raccontaci la tua idea: il nostro team ti risponderà entro 24 ore.</p>
+
+            <ul class="contact__list">
+              <li data-reveal><span>Studio</span>Lungomare Matteotti, 65121 Pescara (PE)</li>
+              <li data-reveal><span>Telefono</span><a href="tel:+390850000000">+39 085 000 0000</a></li>
+              <li data-reveal><span>Email</span><a href="mailto:prive@lux-events.it">prive@lux-events.it</a></li>
+              <li data-reveal><span>Orari</span>Su appuntamento · Lun — Sab</li>
+            </ul>
+          </div>
+
+          <form class="form contact__form" id="contactForm" novalidate data-reveal data-glow>
+            <div class="field">
+              <input type="text" id="cName" name="name" placeholder=" " autocomplete="name" required>
+              <label for="cName">Nome e cognome</label>
+              <span class="field__line"></span>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="form__row">
+              <div class="field">
+                <input type="email" id="cEmail" name="email" placeholder=" " autocomplete="email" required>
+                <label for="cEmail">Email</label>
+                <span class="field__line"></span>
+                <span class="field__error" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <input type="tel" id="cPhone" name="phone" placeholder=" " autocomplete="tel">
+                <label for="cPhone">Telefono (facoltativo)</label>
+                <span class="field__line"></span>
+                <span class="field__error" aria-live="polite"></span>
+              </div>
+            </div>
+            <div class="field field--select">
+              <select id="cType" name="type" required>
+                <option value="" disabled selected hidden></option>
+                <option>Evento privato</option>
+                <option>Evento aziendale</option>
+                <option>Lancio di brand</option>
+                <option>Compleanno / Anniversario</option>
+                <option>Altro</option>
+              </select>
+              <label for="cType">Tipo di evento</label>
+              <span class="field__line"></span>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <div class="field">
+              <textarea id="cMsg" name="message" rows="3" placeholder=" " required></textarea>
+              <label for="cMsg">Il tuo messaggio</label>
+              <span class="field__line"></span>
+              <span class="field__error" aria-live="polite"></span>
+            </div>
+            <button type="submit" class="btn btn--gold btn--block" data-magnetic><span>Invia richiesta</span></button>
+            <p class="form__note" id="contactNote" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <footer class="footer">
+          <div class="container footer__inner">
+            <div class="footer__brand">
+              <span class="logo-mark logo-mark--lg">LUX</span>
+              <p class="footer__motto">« Pochi ospiti. Nessun rimpianto. »</p>
+            </div>
+            <div class="footer__social">
+              <a href="#" aria-label="Instagram" data-magnetic>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" class="fill"/></svg>
+              </a>
+              <a href="#" aria-label="TikTok" data-magnetic>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5"/><path d="M14 3c.5 3 2.5 5 5.5 5"/></svg>
+              </a>
+              <a href="#" aria-label="Facebook" data-magnetic>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V21M6 11h8"/></svg>
+              </a>
+              <a href="#" aria-label="WhatsApp" data-magnetic>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8.5 19z"/><path d="M9 9.5c.3 2 2.5 4.3 4.5 4.8l1.2-1.2 1.8.9"/></svg>
+              </a>
+            </div>
+            <div class="footer__bottom">
+              <span>© <span id="year">2026</span> Lux Events · Pescara</span>
+              <span>Foto e video: <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a></span>
+              <a href="#home" data-goto="0" class="footer__top">Torna su ↑</a>
+            </div>
+          </div>
+        </footer>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ============ LIGHTBOX ============ -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria eventi" hidden>
+    <button class="lightbox__close" id="lbClose" aria-label="Chiudi">✕</button>
+    <button class="lightbox__nav lightbox__nav--prev" id="lbPrev" aria-label="Precedente">←</button>
+    <div class="lightbox__stage" id="lbStage"></div>
+    <button class="lightbox__nav lightbox__nav--next" id="lbNext" aria-label="Successivo">→</button>
+    <p class="lightbox__caption" id="lbCaption"></p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
